@@ -76,6 +76,10 @@ const payment = computed(()=>{
   display: flex;
   padding: 2rem 5rem;
   gap: 1rem;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  border-radius: 40px;
 
   div{
     flex: 1;
@@ -83,6 +87,7 @@ const payment = computed(()=>{
     border-radius: 5px;
   }
   .cart-list{
+    width: 80vw;
     ul{
       li{
         display: flex;
@@ -93,6 +98,15 @@ const payment = computed(()=>{
     }
   }
   .cart-add{
+    width: 20vw;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2{
+      padding: 40px;
+    }
     .total{
       border: none;
       padding: 1rem;
