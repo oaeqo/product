@@ -36,17 +36,27 @@ const addToList = (list) => {
     p{
       padding: 20px;
       text-align: center;
+      font-size: 14px;
+      font-weight: bold;
     }
     button{
-      width: 100px;
-      height: 100px;
-      border: 2px solid #888;
+      margin-top: 10px;
+      font-size: 13px;
+      word-break: keep-all;
+      text-align: center;
+      width: 95px;
+      height: 90px;
+      border: 10px solid #dd2e2e;
       outline: none;
-      padding: 20px;
+      line-height: 20px;
+      padding: 11px;
       border-radius: 50%;
       cursor: pointer;
+      background-color: #f59e4e;
+      transition: 0.4s;
       &:hover{
-        background-color: #aca6a9;
+        background-color: #dd2e2e;
+        color: #fff;
       }
     }
   }

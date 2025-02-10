@@ -19,7 +19,7 @@
     <div class="total">
       <p>상품금액 : {{  totalPrice }}</p>
       <p>배송비   : {{  shippingFee === 0 ? "무료" : `${shippingFee}원` }} </p>
-      <p>(배송비 3,000원 5만원 이상 구매시 무료배송)</p>
+      <p>(배송비 3,000원 / 5만원 이상 구매시 무료배송)</p>
       <p>총 결제금액 : {{ payment }}</p>
       <button @click="handleOpen">주문결제</button>
     </div>
@@ -73,13 +73,11 @@ const payment = computed(()=>{
 
 <style lang="scss" scoped>
 .cart{
-  display: flex;
   padding: 2rem 5rem;
   gap: 1rem;
   height: 80vh;
+  width: 80vw;
   display: flex;
-  justify-content: center;
-  border-radius: 40px;
 
   div{
     flex: 1;
@@ -87,7 +85,8 @@ const payment = computed(()=>{
     border-radius: 5px;
   }
   .cart-list{
-    width: 80vw;
+    border: none;
+    width: 80%;
     ul{
       li{
         display: flex;
@@ -98,18 +97,53 @@ const payment = computed(()=>{
     }
   }
   .cart-add{
-    width: 20vw;
-    border: none;
+    position: fixed;
+    right: 0;
+    top: 300px;
+    transform: translateX(-45%);
+    width: 30%;
+    height: 30%;
+    padding: 50px;
+    background-color: transparent;
+    border: 20px solid #e6d708;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     h2{
-      padding: 40px;
+      padding: 10px;
     }
     .total{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       border: none;
       padding: 1rem;
+      p{
+        padding: 7px;
+        font-size: 15px;
+      }
+      p:nth-of-type(3){
+          font-size: 13px;
+        }
+        p:nth-of-type(4){
+          font-weight: bold;
+        }
+        button{
+          margin-top: 20px;
+          background-color: #f59e4e;
+          border: 2px solid #dd2e2e;
+          padding: 13px;
+          // border-radius: 50%;
+          cursor: pointer;
+          transition: 0.4s;
+      &:hover{
+        background-color: #dd2e2e;
+        color: #fff;
+      }
+        }
     }
   }
 }
