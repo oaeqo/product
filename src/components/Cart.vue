@@ -141,7 +141,7 @@ const payment = computed(()=>{
           transition: 0.4s;
       &:hover{
         background-color: #dd2e2e;
-        color: #fff;
+        color: #cac8c8;
       }
         }
     }
