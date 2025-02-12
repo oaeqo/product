@@ -3,13 +3,13 @@
     <OpenModal :isOpen="isOpenModal" @closeModal="closeModal" />
     <div class="cart-list">
     <h2>장바구니</h2>
-    <h3 v-if="cart.length === 0">장바구니가 비었습니다</h3>
+    <h3 :style="{marginTop:'50px', marginLeft:'15px'}" v-if="cart.length === 0">장바구니가 비었습니다.</h3>
     <ul v-else>
       <li v-for="list in cart" :key="list.id">
         <img :src="list.image" :alt="list.name">
         <p>{{ list.name }}</p>
-        <p>가격:{{ list.price }}</p>
-        <p>수량:{{ list.count }}</p>
+        <p>가격: {{ list.price }}￦</p>
+        <p>수량: {{ list.count }}</p>
         <button @click="removeCart(list.id)">삭제</button>
       </li>
     </ul>
@@ -75,9 +75,13 @@ const payment = computed(()=>{
 .cart{
   padding: 2rem 5rem;
   gap: 1rem;
-  height: 80vh;
-  width: 80vw;
+  height: 81.6vh;
   display: flex;
+  background-color: #f5d377;
+  // background-image: url('./images/birth2.png');
+  //   background-size: cover;
+  // background-repeat: no-repeat;
+
 
   div{
     flex: 1;
@@ -87,25 +91,50 @@ const payment = computed(()=>{
   .cart-list{
     border: none;
     width: 80%;
+    h2{
+      margin-left: 17px;
+    }
     ul{
+      padding: 20px 0;
       li{
         display: flex;
-        gap: 1rem;
+        gap: 2rem;
         align-items: center;
         padding: 1rem;
+        img{
+          width: 100px;
+          height: 100px;
+        }
+        p{
+        font-size: 15px;
+        }
+        p:nth-of-type(2){
+          font-size: 14px;
+        }
+        button {
+          padding: 5px;
+          background-color: transparent;
+          outline: none;
+          border: 2px solid #468124;
+          cursor: pointer;
+          &:hover{
+            background-color: #407920;
+            color: #fff;
+          }
+        }
       }
     }
   }
   .cart-add{
     position: fixed;
     right: 0;
-    top: 300px;
-    transform: translateX(-45%);
+    top: 270px;
+    transform: translateX(-35%);
     width: 30%;
     height: 30%;
     padding: 50px;
     background-color: transparent;
-    border: 20px solid #e6d708;
+    border: 20px solid #407920;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -133,15 +162,16 @@ const payment = computed(()=>{
         }
         button{
           margin-top: 20px;
-          background-color: #f59e4e;
-          border: 2px solid #dd2e2e;
+          background-color: #6bb143;
+          color: #fff;
+          border: 3px solid  #468124;
           padding: 13px;
           // border-radius: 50%;
           cursor: pointer;
           transition: 0.4s;
       &:hover{
-        background-color: #dd2e2e;
-        color: #cac8c8;
+        background-color: #468124;
+        color: #fff;
       }
         }
     }

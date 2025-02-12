@@ -28,10 +28,20 @@ const selectedClick = (list) => {
 </script>
 
 <style lang="scss" scoped>
+a{
+  color: inherit;
+}
+
 nav{
   display: flex;
   justify-content: space-between;
   padding: 2rem 5rem;
+  background-color: #f3cc60;
+  .router-link{
+    display: flex;
+    gap: 4rem;
+    margin-left: 60px;
+  }
   ul{
     display: flex;
     gap: 3rem;
